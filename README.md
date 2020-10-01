@@ -1,12 +1,14 @@
+# book_class
+
 Book classes in your schedule three days ahead!
 
-# Install
+## Install
 
 `python3 -m venv ./venv`
 `source venv/bin/activate`
 `pip install -r requirements.txt`
 
-# Usage
+## Usage
 
 `source venv/bin/activate`
-`./class-booker.py`
+`./book_class.py`

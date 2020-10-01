@@ -38,11 +38,16 @@ print('found classes table')
 select = Select(driver.find_element_by_class_name('location_alias'))
 select.select_by_visible_text('Surry Hills Fitness Playground')
 
-third_day = driver.find_elements_by_class_name('bw-widget__day')[6]
+third_day = driver.find_elements_by_class_name('bw-widget__day')[3]
 date_text = third_day.find_element_by_class_name('bw-widget__date').text
 weekday = date_text.split(',')[0]
+
+if weekday not in schedule.keys():
+    print('No class to book today: {}'.format(weekday))
+    exit(0)
+
 class_to_book = schedule[weekday]
-print('Trying to book: {} {}'.format(class_to_book['time'], class_to_book['name']))
+print('Trying to book: {} {} {}'.format(weekday, class_to_book['time'], class_to_book['name']))
 classes = third_day.find_elements_by_class_name('bw-session')
 class_found = None
 for _class in classes:
