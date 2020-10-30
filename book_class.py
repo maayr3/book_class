@@ -84,5 +84,4 @@ print('class booked')
 
 time.sleep(5)
 driver.close()
-driver.close()
 exit(0)
